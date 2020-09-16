@@ -13,8 +13,8 @@ class App extends React.Component {
   render() {
     return (
       <div container-fluid>         
-        <Person></Person><HeartRate heart={MIN_HEART}></HeartRate>
-
+        <Person></Person>
+        <HeartRate heart={MIN_HEART}></HeartRate>
       </div>
     );
   }
