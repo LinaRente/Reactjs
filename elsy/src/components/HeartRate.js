@@ -6,7 +6,7 @@ class Person extends React.Component {
         return (
             <div class='box col-md-2 col-6' >
                 <span style={{ color: 'red' }}>
-                    <Icon name='favorite' style={{ color: 'red' }}></Icon>
+                    <Icon name='favorite'></Icon>
                 </span>
                 <p>Heart Rate: {this.props.heart}</p>
             </div>
