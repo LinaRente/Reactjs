@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Icon from './core/Icon';
 
 class Person extends React.Component {
