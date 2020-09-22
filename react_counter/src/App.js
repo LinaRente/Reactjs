@@ -20,7 +20,7 @@ class App extends React.Component {
     }
     decrementCount() {
         this.setState({
-            count: Math.max(this.state.count - 1,0)
+            count: Math.max(this.state.count - 1,1)
         })
     }
     render() {
