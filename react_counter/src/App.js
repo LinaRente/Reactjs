@@ -3,11 +3,12 @@ import Counter from './components/Counter'
 
 class App extends React.Component {
 
-    constructor(props) {
-        super(props)
+    constructor() {
+        super()
         this.incrementCount = this.incrementCount.bind(this);
         this.decrementCount = this.decrementCount.bind(this);
     }
+    
     state = {
 
         count: 1
