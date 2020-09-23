@@ -1,6 +1,6 @@
 import React from 'react';
-import Icon from './core/Icon';
-
+import Icon from '../components/core/Icon'
+import Slider from '../components/core/Slider'
 
 class Person extends React.Component {
     render() {
@@ -9,7 +9,13 @@ class Person extends React.Component {
                 <span style={{ color: 'black' }}>
                     <Icon name='directions_walk'></Icon>
                 </span>
-
+                <Slider
+                    min={this.props.min}
+                    max={this.props.max}
+                    onChange={this.props.onChange}
+                    value={this.props.steps}>
+                </Slider>
+                {this.props.steps}
             </div>
         );
     }
