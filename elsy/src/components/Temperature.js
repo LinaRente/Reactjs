@@ -7,7 +7,7 @@ class Temperature extends React.Component {
         return (
             <div class="box col-md-2 col-6">
                 <span style={{color: "yellow"}}>
-                    <Icon name=" wb_sunny" ></Icon>
+                    <Icon name="wb_sunny" ></Icon>
                 </span>
                 <Slider
                     max={this.props.max}

@@ -1,7 +1,8 @@
 import React from 'react';
 import Person from './components/Person';
 import HeartRate from './components/HeartRate';
-import Temperature from './components/Temperature'
+import Temperature from './components/Temperature';
+import Water from './components/Water';
 
 const MIN_TEMPERATURE = -20
 const MAX_TEMPERATURE = 40
@@ -17,6 +18,7 @@ class App extends React.Component {
     this.onHeartChange = this.onHeartChange.bind(this)
     this.onStepsChange = this.onStepsChange.bind(this)
     this.onTemperatureChange = this.onTemperatureChange.bind(this)
+    this.onWaterChange =  this.onWaterChange.bind(this)
   }
 
   state = {
@@ -44,6 +46,12 @@ class App extends React.Component {
     })
   }
 
+  onWaterChange(val) { 
+    this.setState({
+      water: val
+    })
+  }
+
   render() {
     return (
       <div container-fluid>
@@ -65,6 +73,11 @@ class App extends React.Component {
           max={MAX_TEMPERATURE}
           min={MIN_TEMPERATURE}>
         </Temperature>
+
+        <Water
+        water={this.state.water}
+        onChange={this.onWaterChange}>
+        </Water>
       </div>
     );
   }
