@@ -3,13 +3,9 @@
     padding: 10px;
     text-align: center;
 }
-.box:nth-child(2n) {
+.box:nth-child(2n+1) {
     background: #CCC;
 }
-.box:nth-child(2n+1) {
+.box:nth-child(2n) {
     background: #AAA;
-}
-.water { 
-    background-color: #3A85FF;
-    color: #FFFF;
 }

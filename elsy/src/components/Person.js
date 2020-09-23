@@ -15,7 +15,8 @@ class Person extends React.Component {
                     onChange={this.props.onChange}
                     value={this.props.steps}>
                 </Slider>
-                {this.props.steps}
+                <p>{this.props.steps} Steps</p>
+                
             </div>
         );
     }

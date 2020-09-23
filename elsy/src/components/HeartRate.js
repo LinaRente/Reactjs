@@ -15,7 +15,8 @@ class HeartRate extends React.Component {
                     onChange={this.props.onChange}
                     value={this.props.heart}>
                 </Slider>
-                {this.props.heart}
+                <p>{this.props.heart} BPM</p>
+                
             </div>
         );
     }

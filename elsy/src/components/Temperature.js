@@ -15,7 +15,8 @@ class Temperature extends React.Component {
                     onChange={this.props.onChange}
                     value={this.props.temperature}>
                 </Slider>
-                { this.props.temperature}
+                <p>{ this.props.temperature}°C</p>
+                
 
             </div>
         );

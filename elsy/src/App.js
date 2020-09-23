@@ -9,7 +9,7 @@ const MAX_TEMPERATURE = 40
 const MIN_HEART = 80
 const MAX_HEART = 180
 const MIN_STEPS = 0
-const MAX_STEPS = 5000
+const MAX_STEPS = 50000
 
 class App extends React.Component {
 
@@ -18,7 +18,7 @@ class App extends React.Component {
     this.onHeartChange = this.onHeartChange.bind(this)
     this.onStepsChange = this.onStepsChange.bind(this)
     this.onTemperatureChange = this.onTemperatureChange.bind(this)
-    this.onWaterChange =  this.onWaterChange.bind(this)
+    this.calculateWater = this.calculateWater.bind(this)
   }
 
   state = {
@@ -46,7 +46,7 @@ class App extends React.Component {
     })
   }
 
-  onWaterChange(val) { 
+  calculateWater(val) {
     this.setState({
       water: val
     })
@@ -55,6 +55,11 @@ class App extends React.Component {
   render() {
     return (
       <div container-fluid>
+        <Water
+          water={this.state.water}
+          onChange={this.calculateWater}>
+        </Water>
+
         <Person
           steps={this.state.steps}
           onChange={this.onStepsChange}
@@ -74,10 +79,7 @@ class App extends React.Component {
           min={MIN_TEMPERATURE}>
         </Temperature>
 
-        <Water
-        water={this.state.water}
-        onChange={this.onWaterChange}>
-        </Water>
+
       </div>
     );
   }
