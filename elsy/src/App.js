@@ -33,14 +33,14 @@ class App extends React.Component {
       heart: val
     })
   }
-
+  
   onStepsChange(val) {
     this.setState({
       steps: val
     })
   }
 
-  // onTemperatureChange(val) {
+  // onTemperatureChange(val) {f
   //   this.setState({
   //     temperature: val
   //   })
