@@ -7,12 +7,16 @@ import Pay from './components/Pay';
 
 class App extends Component {
   state = {
-    activeTab: add,
+    activeTab: "add",
     items: []
   }
   render() {
     return (
-      
+      <div>
+        <Add></Add>
+        <List></List>
+        <Pay></Pay>
+      </div>
     );
   }
 }

@@ -4,7 +4,7 @@ class List extends React.Component {
     render() { 
         return(
             <div>
-                <title>List</title>
+                <h1>List</h1>
             </div>
         )
     }
