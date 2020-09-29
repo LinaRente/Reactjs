@@ -11,12 +11,13 @@ const min = 1;
 const max = 10;
 
 
+
 class App extends React.Component {
-  
+
   constructor() {
     super();
     this.state = {
-      activeTab: "",
+      activeTab: "add",
       items: [],
     }
   }
@@ -28,7 +29,7 @@ class App extends React.Component {
       <div>
 
         <div className="App btn-group">
-          <Button onClick={this.onClickTab.bind(this, 'add')}/*min={min} max={max}*/> Add </Button>
+          <Button onClick={this.onClickTab.bind(this, 'add')} min={min} max={max}> Add </Button>
           <Button onClick={this.onClickTab.bind(this, 'list')}> List </Button>
           <Button onClick={this.onClickTab.bind(this, 'pay')}> Pay </Button>
         </div>
