@@ -6,7 +6,7 @@ class Button extends React.Component {
             <div className="btn-group   btn-group-toggle" data-toggle="buttons">
                 <button className="btn btn-outline-primary border-secondary text-secondary" onClick={this.props.onClick}>
                     {this.props.children}
-                    {this.props.isSelected}                    
+                    {this.props.isSelected}
                 </button>
             </div>
         );

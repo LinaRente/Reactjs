@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import Slider from './core/Slider'
+
+
 class Add extends Component {
+
 
     constructor() {
         super();
@@ -20,32 +23,31 @@ class Add extends Component {
             console.log(this.state.input)
         })
     }
-    updatePrice(evt) {
+    updatePrice(val) {
         this.setState({
-            Slider: evt.target.value
+            price: val
         }, () => {
-            console.log(this.state.Slider)
+            console.log(this.state.price)
         })
     }
     submitForm(evt) {
-        this.setState({
-            Slider: evt.target.value
-        }, () => {
-            console.log(this.state.Slider)
-        })
-    }
-    handleChange(event) {
-        this.setState({ value: event.target.value });
+        this.props.callBack(this.state.input, this.state.price)
+        
     }
 
     render() {
         return (
             <div className="container" >
-                <form className="form-inline " >
+                {/* <form className="form-inline " > */}
                     <input type="text" input={this.state.input} onChange={this.updateInput} placeholder="item" className="form-control" />
                     <button type="submit" className="btn btn-primary " onClick={this.submitForm}>Add</button>
-                </form>
-                <Slider></Slider>
+                {/* </form> */}
+                {/* preventDefault()  */}
+                <Slider max={this.props.max}
+                    min={this.props.min}
+                    value={this.state.price}
+                    onChange={this.updatePrice} />
+                <p>{this.state.price}€</p>
             </div>
         )
     }

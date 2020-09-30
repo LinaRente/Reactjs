@@ -1,4 +1,5 @@
 import React from 'react';
+import RCSlider from 'rc-slider'
 import 'rc-slider/assets/index.css';
 
 
@@ -6,10 +7,10 @@ class Slider extends React.Component {
     render() {
         return (
             <div>
-                <span max={this.props.max}
+                <RCSlider max={this.props.max}
                     min={this.props.min}
-                    value={this.props.price}
-                    onChange={this.props.updatePrice}></span>
+                    value={this.props.value}
+                    onChange={this.props.onChange} />
             </div>
         )
     }
