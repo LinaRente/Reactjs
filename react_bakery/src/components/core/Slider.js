@@ -6,7 +6,7 @@ import 'rc-slider/assets/index.css';
 class Slider extends React.Component {
     render() {
         return (
-            <div>
+            <div className='Slider'>
                 <RCSlider max={this.props.max}
                     min={this.props.min}
                     value={this.props.value}

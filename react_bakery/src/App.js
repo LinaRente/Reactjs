@@ -14,6 +14,9 @@ class App extends React.Component {
 
   constructor() {
     super();
+
+    this.addItem = this.addItem.bind(this)
+
     this.state = {
       activeTab: "add",
       items: [],
@@ -22,35 +25,37 @@ class App extends React.Component {
 
   onClickTab(activeTab) {
     this.setState({ activeTab })
+    console.log(this.state)
   }
 
-  addItem(price, input) {
+  addItem(input, price) {
 
     let newItem = {
-      price: price,
-      input: input
+      input: input,
+      price: price
     }
 
     let allItems = this.state.items;
+
     allItems.push(newItem)
     this.setState({
       items: allItems
     })
-    console.log();
+    console.log(this.state.items);
   }
 
   render() {
     return (
-      <div>
-
-        <div className="App btn-group">
-          <Button onClick={this.onClickTab.bind(this, 'add')} > Add </Button>
-          <Button onClick={this.onClickTab.bind(this, 'list')}> List </Button>
-          <Button onClick={this.onClickTab.bind(this, 'pay')}> Pay </Button>
+      <div className='container-sm App'>
+        <h1 className='title'>Bakery</h1>
+        <div className="Add btn-group">
+          <Button isSelected={this.state.activeTab === 'add'} onClick={this.onClickTab.bind(this, 'add')} > Add </Button>
+          <Button isSelected={this.state.activeTab === 'list'} onClick={this.onClickTab.bind(this, 'list')}> List </Button>
+          <Button isSelected={this.state.activeTab === 'pay'} onClick={this.onClickTab.bind(this, 'pay')}> Pay </Button>
         </div>
 
-        {this.state.activeTab === 'add' && <Add min={min} max={max} callBack={this.addItem} />}
-        {this.state.activeTab === 'list' && <List />}
+        {this.state.activeTab === 'add' && <Add min={min} max={max} callback={this.addItem} />}
+        {this.state.activeTab === 'list' && <List items={this.state.items} fn={this.props.submitForm}/>}
         {this.state.activeTab === 'pay' && <Pay />}
 
       </div>

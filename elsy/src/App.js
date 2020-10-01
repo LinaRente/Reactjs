@@ -18,7 +18,6 @@ class App extends React.Component {
     this.onHeartChange = this.onHeartChange.bind(this)
     this.onStepsChange = this.onStepsChange.bind(this)
     this.onTemperatureChange = this.onTemperatureChange.bind(this)
-    // this.calculateWater = this.calculateWater.bind(this)
 
     this.state = {
       water: 0,

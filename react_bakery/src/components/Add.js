@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Slider from './core/Slider'
 
 
+
 class Add extends Component {
 
 
@@ -30,17 +31,18 @@ class Add extends Component {
             console.log(this.state.price)
         })
     }
-    submitForm(evt) {
-        this.props.callBack(this.state.input, this.state.price)
-        
+    submitForm() {
+        this.props.callback(this.state.input, this.state.price)
     }
 
     render() {
         return (
-            <div className="container" >
+            <div className="container-sm Add" >
                 {/* <form className="form-inline " > */}
+                <span className="form-inline">
                     <input type="text" input={this.state.input} onChange={this.updateInput} placeholder="item" className="form-control" />
-                    <button type="submit" className="btn btn-primary " onClick={this.submitForm}>Add</button>
+                    <button type="submit" className="btn btn-primary" onClick={this.submitForm}>Add</button>
+                </span>
                 {/* </form> */}
                 {/* preventDefault()  */}
                 <Slider max={this.props.max}
