@@ -35,15 +35,19 @@ class Add extends Component {
         this.props.callback(this.state.input, this.state.price)
     }
 
+    handleClick = (event) => {
+        event.preventDefault();
+    }
+
     render() {
         return (
             <div className="container-sm Add" >
-                {/* <form className="form-inline " > */}
-                <span className="form-inline">
+                <form className="form-inline " onClick={this.handleClick}>
+                    {/* <span className="form-inline"> */}
                     <input type="text" input={this.state.input} onChange={this.updateInput} placeholder="item" className="form-control" />
                     <button type="submit" className="btn btn-primary" onClick={this.submitForm}>Add</button>
-                </span>
-                {/* </form> */}
+                    {/* </span> */}
+                </form>
                 {/* preventDefault()  */}
                 <Slider max={this.props.max}
                     min={this.props.min}
