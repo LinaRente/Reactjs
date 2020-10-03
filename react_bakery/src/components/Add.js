@@ -21,14 +21,14 @@ class Add extends Component {
         this.setState({
             input: evt.target.value
         }, () => {
-            console.log(this.state.input)
+            // console.log(this.state.input)
         })
     }
     updatePrice(val) {
         this.setState({
             price: val
         }, () => {
-            console.log(this.state.price)
+            // console.log(this.state.price)
         })
     }
     submitForm() {

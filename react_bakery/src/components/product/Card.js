@@ -8,7 +8,8 @@ class Card extends React.Component {
     }
 
     componentDidMount() {
-        fetch("http://konexio.codiscovery.co/bakery/api/?q=croissant")
+        const url = `http://konexio.codiscovery.co/bakery/api/?q=${this.props.itemName}`
+        fetch(url)
             .then(res => res.json())
             .then(
                 (json) => {
@@ -21,18 +22,18 @@ class Card extends React.Component {
                         error
                     });
                 }
-                
+
             )
     }
 
     myfunction() {
         console.log("CLICKED");
-  }
+    }
 
     render() {
         return (
             <div>
-                <button><img src={this.state.source} alt='croissant' onClick={this.myfunction}/></button>
+                <button onClick={() => this.props.onClickFn(this.props.itemName, this.props.price)}><img src={this.state.source} alt='croissant' onClick={this.myfunction} /></button>
             </div>
         )
     }

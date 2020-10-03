@@ -25,7 +25,7 @@ class App extends React.Component {
 
   onClickTab(activeTab) {
     this.setState({ activeTab })
-    console.log(this.state)
+    // console.log(this.state)
   }
 
   addItem(input, price) {
@@ -41,7 +41,7 @@ class App extends React.Component {
     this.setState({
       items: allItems
     })
-    console.log(this.state.items);
+    // console.log(this.state.items);
   }
 
   render() {
@@ -56,7 +56,7 @@ class App extends React.Component {
 
         {this.state.activeTab === 'add' && <Add min={min} max={max} callback={this.addItem} />}
         {this.state.activeTab === 'list' && <List items={this.state.items} fn={this.props.submitForm}/>}
-        {this.state.activeTab === 'pay' && <Pay />}
+        {this.state.activeTab === 'pay' && <Pay items={this.state.items}/>}
 
       </div>
     )
