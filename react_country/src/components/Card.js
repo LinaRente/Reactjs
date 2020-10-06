@@ -6,11 +6,11 @@ class Card extends React.Component {
 
         return (
             <div>
-                <p>Name : {this.props.name}</p>
-                <p>Capitale : {this.props.capital}</p>
-                <p>Population : {this.props.population}</p>
-                <p>Region : {this.props.region}</p>
-                <img src={this.props.flag} alt='france'></img>
+                <p>name:{this.props.name}</p>
+                <p>capitale:{this.props.capital}</p>
+                <p>population:{this.props.population}</p>
+                <p>region:{this.props.region}</p>
+                <img src={this.props.flag} alt='france'/>
             </div>
         )
     }

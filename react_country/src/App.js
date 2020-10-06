@@ -14,8 +14,12 @@ class App extends Component {
     region: ''
   }
 
-  clickCountry() {
-    const url = 'https://restcountries.eu/rest/v2/name/france';
+  componentDidMount() {
+    this.clickCountry('france');
+  }
+
+  clickCountry(country) {
+    const url = `https://restcountries.eu/rest/v2/name/${country}`;
     fetch(url)
       .then(res => res.json())
       .then(json => {
@@ -64,17 +68,15 @@ class App extends Component {
     return (
       <div className="App">
 
-        <Button onClick={this.clickCountry.bind(this, 'Send')}>France</Button>
+        <Button onClick={this.clickCountry.bind(this, 'france')}>France</Button>
         <Button onClick={this.clickCountry.bind(this, 'brazil')}>Brazil</Button>
         <Button onClick={this.clickCountry.bind(this, 'croatia')}>Croatia</Button>
-        
-        <Card><p>Name : {this.state.name}</p>
-          <p>Capitale : {this.state.capital}</p>
-          <p>Population : {this.state.population}</p>
-          <p>Region : {this.state.region}</p>
-          <img src={this.state.flag} alt='france'></img>
-        </Card>
 
+        <Card name={this.state.name}
+          capitale={this.state.capital}
+          population={this.state.population}
+          region={this.state.region}
+          flag={this.state.flag}></Card>
       </div>
     );
   }
