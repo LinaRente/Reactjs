@@ -5,7 +5,7 @@ class Button extends React.Component {
         return (
             <div>
                 <button className={this.props.isSelected} onClick={this.props.onClick}>{this.props.children}
-                    {this.props.isSelected}Pokemon</button>
+                    {this.props.isSelected}<img src='https://pokeres.bastionbot.org/images/pokemon/1.png' alt='Bulbasaur' width='200' /></button>
             </div>
         )
     }

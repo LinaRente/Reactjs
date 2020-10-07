@@ -1,58 +1,61 @@
-import React, { Component } from 'react';
-import './css/bootstrap.min.css'
-import './App.css';
-import Card from './components/Card'
-import Button from './components/Button'
+import React from "react";
+import "./css/bootstrap.min.css";
+import "./App.css";
+import Card from "./components/Card";
+import Button from "./components/Button";
 
-class App extends Component {
-
+class App extends React.Component {
   state = {
-    name: '',
-    height: '',
-    weight: '',
-    type: '',
-    img: ''
+    id: "",
+    name: "",
+    height: "",
+    weight: "",
+    type: "",
+    source: "",
+  };
+
+  componentDidMount() { 
+    this.clickPokemon('1')
   }
 
-  clickPokemon() {
-    const url = "https://pokeapi.co/api/v2/pokemon/1"
+  clickPokemon(id) {
+    const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
     fetch(url)
-      .then(res => res.json())
-      .then(json => {
-        // console.log(json.name)
-        let myTypes = json.types.map(function (elem) {
-          return elem.type.name;
-        }).join(', ')
+      .then((res) => res.json())
+      .then((json) => {
+        let myTypes = json.types
+          .map(function (elem) {
+            return elem.type.name;
+          })
+          .join(", ");
 
         this.setState({
           name: json.name,
           height: json.height,
           weight: json.weight,
-          type: myTypes
-        })
-      })
+          type: myTypes,
+          source: `https://pokeres.bastionbot.org/images/pokemon/${id}.png`,
+        });
+      });
   }
 
   render() {
     return (
       <div>
-        <div className="App jumbotron dark">
-          <h1>Pokedex</h1>
+        <div className="jumbotron d-flex justify-content-center" style={{ backgroundColor: "black", color: "white" }}>
           <Card
             name={this.state.name}
             height={this.state.height}
             weight={this.state.weight}
             type={this.state.type}
-            img={this.state.img}
-          ></Card>
+            source={this.state.source}/>
         </div>
-        <div>
-          <Button onClick={this.clickPokemon.bind(this, 'bulbasaur')}></Button>
-
+        <div className="d-flex justify-content-around">
+          <Button onClick={this.clickPokemon.bind(this, "1")} width='200' />  
+          <Button onClick={this.clickPokemon.bind(this, "2")} />
         </div>
       </div>
     );
   }
 }
-
 export default App;
