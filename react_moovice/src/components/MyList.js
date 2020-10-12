@@ -2,6 +2,11 @@ import React, { Component } from 'react'
 
 
 class MyList extends Component {
+
+    getFromLocalStorage() { 
+
+    }
+
     render() {
         return (
             <div>
