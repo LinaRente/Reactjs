@@ -21,23 +21,6 @@ class MyList extends Component {
     }
 
     componentDidMount() {
-        console.log(API_KEY)
-        const getList = (getMovies) =>
-        fetch(`http://api.themoviedb.org/3/movie/${getMovies}?api_key=${API_KEY}`)
-            .then(res => res.json())
-            .then(data => data)
-
-            const idPromises = this.state.movieIds.map((getMovies) => { 
-                
-            })
-            Promise.all(idPromises)
-                .then((getList) => {
-
-                })
-                this.setState({
-                    movies: getList
-                })
-                console.log(getList)
     }
 
 
