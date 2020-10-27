@@ -30,6 +30,8 @@ class App extends Component {
           flag: json[0].flag,
           population: json[0].population,
           region: json[0].region
+
+          
         })
       });
   }
